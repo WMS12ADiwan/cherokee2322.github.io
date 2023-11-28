@@ -14,7 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url('Celres.jpeg') center/cover no-repeat;
+  background: url('Celres.jpg') center/cover no-repeat;
 
 .container {
   width: 420px;
