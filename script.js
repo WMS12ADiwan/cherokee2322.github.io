@@ -144,3 +144,37 @@ const checkWord = () => {
 // Event listeners for the refresh and check buttons
 refreshBtn.addEventListener("click", initGame);
 checkBtn.addEventListener("click", checkWord);
+
+// Event listener for the "Next" button
+const nextBtn = document.querySelector(".next-word");
+nextBtn.addEventListener("click", nextWord);
+
+function nextWord() {
+  // Increment the index or perform logic to get the next word
+  // For now, let's assume you have an array of words called 'words'
+  // and you have a variable 'currentIndex' to keep track of the current word
+  currentIndex++;
+  
+  // Check if currentIndex exceeds the length of the words array
+  if (currentIndex >= words.length) {
+    // Handle the end of the game or loop back to the first word
+    currentIndex = 0;
+  }
+
+  // Update the display with the next word
+  updateDisplay();
+}
+
+// Function to update the display with the current word
+function updateDisplay() {
+  let randomObj = words[currentIndex];
+  let jumbledWords = shuffleWord(randomObj.word);
+  let wordArray = jumbledWords.split(" ");
+  let spacedWordArray = wordArray.map(word => shuffleLetters(word) + " ");
+
+  wordText.innerHTML = spacedWordArray.join("");
+  hintText.innerText = randomObj.hint;
+  correctWord = randomObj.word.toLowerCase();
+  inputField.value = "";
+  inputField.setAttribute("maxlength", correctWord.length);
+}
