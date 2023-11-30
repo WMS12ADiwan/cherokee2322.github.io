@@ -178,3 +178,9 @@ function updateDisplay() {
   inputField.value = "";
   inputField.setAttribute("maxlength", correctWord.length);
 }
+function skipWord(){
+  if(count!=0){
+    count--;
+    initGame();
+   }
+}
