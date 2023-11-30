@@ -141,6 +141,13 @@ const checkWord = () => {
   //initGame();
 };
 
+function skipWord(){
+  if(count!=0){
+    count--;
+    initGame();
+   }
+}
+
 // Event listeners for the refresh and check buttons
 refreshBtn.addEventListener("click", initGame);
 checkBtn.addEventListener("click", checkWord);
